@@ -3,6 +3,8 @@ const hbs = require("hbs");
 const fs = require("fs")
 var app = express();
 
+const port = process.env.PORT || 8080;
+
 hbs.registerPartials(__dirname + "/views/partials");
 app.set('view engine', 'hbs');
 
@@ -56,6 +58,6 @@ app.get("/error", (req, res) => {
     });
 });
 
-app.listen(8081, () => {
-    console.log("Server is now serving on port 8081");
+app.listen(port, () => {
+    console.log(`Server is now serving on port ${port}`);
 });
